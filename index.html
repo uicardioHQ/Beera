@@ -187,14 +187,14 @@
 		</div>
 	</section>
 
-	<footer class="mt-5 py-5" style="background-color: #A2D4C4;position: relative;">
+	<footer class="mt-5 py-5" style="background-color: #eafaf4;position: relative;">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-12 text-dark">
 					<img src="./assets/img/logo.svg" width="80px" class="mb-3">
 					<p class="text-secondary">© 2018 Beera, all rights reserved</p>
 				</div>
-				<div class="col-lg-6 col-12 text-right">
+				<div class="col-lg-6 col-12 text-lg-right text-center mt-4 mt-sm-0">
 					<h3>
 						<a class="ml-2 text-dark" href="#0"><i class="fab fa-facebook"></i></a>
 						<a class="ml-2 text-dark" href="#0"><i class="fab fa-twitter"></i></a>
@@ -261,6 +261,19 @@
 		  distance : '120px',
 		  easing   : 'ease-in-out',
 		  useDelay: 'always',
+		})
+
+		// adding shapes in the section
+		function randomNum(num) { return Math.floor(Math.random() * num) + 1 };
+		var shapesCount = 3;
+
+		$("section").each(function(){
+			var divHeight = Math.floor($(this).height());
+			var divWidth = Math.floor($(this).width());
+
+			for( i = 0; i < shapesCount; i++){
+				$(this).append('<img src="./assets/img/shapes/'+ randomNum(6) +'.svg" class="shape" style="top:'+ randomNum(divHeight) +'px; left:'+ randomNum(divWidth) +'px; opacity: 0.'+ randomNum(9) +'" />')
+			}
 		})
 
 	</script>
